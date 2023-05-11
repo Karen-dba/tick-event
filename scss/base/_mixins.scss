@@ -1,0 +1,46 @@
+@use 'variables' as var;
+
+
+
+@mixin mqTelefono {
+    @media (min-width: var.$telefono) {
+        @content;
+    }
+}
+
+@mixin mqTablet {
+    @media (min-width: var.$tablet) {
+        @content;
+    }
+}
+
+@mixin mqDesktop {
+    @media (min-width: var.$desktop) {
+        @content;
+    }
+}
+
+@mixin mqDesktopXL {
+    @media (min-width: var.$desktopXL) {
+        @content;
+    }
+}
+
+@mixin botones ($ancho){
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    background-color: var.$colorBackgroundBotones;
+    color: var.$colorFuenteBotones;
+    font-weight: bold;
+    border: var.$colorBordes solid 0.2rem;
+    border-radius: 0.5rem;
+    margin: 0 auto;
+    width: $ancho;
+}
+
+@mixin grid ($numCol, $sep) {
+    display: grid;
+    grid-template-columns: repeat($numCol, 1fr);
+    gap: $sep;
+}
