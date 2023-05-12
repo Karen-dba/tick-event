@@ -508,4 +508,17 @@ img {
   margin: 0 auto;
   width: 90%;
   grid-column: 1/3;
+}
+
+.contenedor_datos {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  background-color: #E9E13A;
+  color: #B12D2D;
+  font-weight: bold;
+  border: #B39C12 solid 0.2rem;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  width: 20rem;
 }/*# sourceMappingURL=app.css.map */
