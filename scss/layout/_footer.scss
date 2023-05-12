@@ -1,0 +1,11 @@
+@use '../base/variables' as var;
+@use '../base/mixins' as mix;
+
+.footer {
+    width: 30rem;
+    height: 50rem;
+    background-color: var.$colorBordes;
+    .boton{
+        @include mix.botones(50rem);
+    }
+}
