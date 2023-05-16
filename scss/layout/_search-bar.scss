@@ -1,0 +1,50 @@
+@use '../base/variables' as var;
+@use '../base/mixins' as mix;
+
+.barra-busqueda {
+    padding: 2.5rem 0;
+}
+
+
+.contenido-barra-busqueda {
+    @include mix.grid(1, 1rem);
+
+    @include mix.mqDesktop {
+        @include mix.grid(2, 1rem);     
+    }
+    .form-busqueda{
+        @include mix.grid(1, 5rem);
+
+        @include mix.mqTablet {
+            @include mix.grid(2, 5rem); 
+        }
+
+    }
+    p{
+        margin: auto;
+    }
+
+    .btn-icon{
+        margin: 2rem auto 0 auto;  
+        @include mix.mqDesktop {
+            margin: 0 0 0 auto;  
+        }
+        picture {
+            display: flex;
+            justify-content: center;
+
+        }
+        .texto-btn-icon {
+            margin: 0;
+            text-align: center;
+            text-transform: uppercase;
+            color: var.$colorFuenteBotones;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    }
+}
+
+.campo-busqueda {
+    @include mix.field-search;
+}

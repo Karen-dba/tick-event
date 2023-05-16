@@ -1,0 +1,89 @@
+@use '../base/variables' as var;
+@use '../base/mixins' as mix;
+
+.modal-login {
+    background-color: rgba($color: #A2A2A2, $alpha: 0.7);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.7s;
+    pointer-events: none;
+    --transform: translateY(-100vh) ;
+    --transition: transform 0.8s;
+    .formulario-login{
+        position: relative;
+        max-width: 40rem;
+        margin: 0 auto;
+        top: -25rem;
+        
+        .contenido-formulario{
+            background-color: var.$blanco;
+            border: var.$colorBordes solid 0.2rem;
+            padding: 3rem 6rem;
+            margin: 0 2rem;
+            border-radius: 1.5rem;
+        } 
+    }
+}
+.mostrar-modal-login {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity 0.7s;
+    --transform: translateY(0);
+}
+
+
+
+
+.form-login-info {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    
+    &:nth-child(1){
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 4rem;
+    }
+    .login-campo-texto {
+        height: 3.2rem;
+        border-radius: 1rem;
+        margin: 0.8rem 0;
+    }
+}
+
+.contenido-login-modal {
+    margin: auto;
+    transform: var(--transform);
+    transition: var(--transition);
+
+}
+
+.images-pet-corp{
+    .img-pet {  
+        width: 40rem;
+        margin: 0 auto;
+    }
+}
+
+.botones-login{
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    gap: 1.5rem;
+    .btn{
+        &:nth-child(1){
+            @include mix.botones(100%, 3rem, 1rem);
+            margin: auto 0;
+        }
+        @include mix.botones(100%, 3rem, 1rem, var.$blanco);margin: auto 0;
+        
+    }
+}
+
+

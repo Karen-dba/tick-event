@@ -26,17 +26,37 @@
     }
 }
 
-@mixin botones ($ancho){
+@mixin botones ($ancho, $alto, $tamFuente, $bg-color: var.$colorBackgroundBotones){
     display: block;
-    padding: 1rem;
+    padding: 1.2rem;
     text-align: center;
-    background-color: var.$colorBackgroundBotones;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var.$colorFuenteBotones;
     font-weight: bold;
+    font-size: $tamFuente;
+    text-transform: uppercase;
+    p{
+        color: var.$colorFuenteBotones; 
+        font-weight: bold;
+        font-size: $tamFuente;
+        text-transform: uppercase;
+        line-height: 1;
+        margin: 0;
+        
+    }
+    background-color: $bg-color;
     border: var.$colorBordes solid 0.2rem;
-    border-radius: 0.5rem;
-    margin: 0 auto;
+    border-radius: 1rem;
+    margin: auto auto;
     width: $ancho;
+    height: $alto;
+}
+@mixin field-search ($ancho: none){
+    border-radius: 1rem;
+    width: $ancho;
+    height: 5rem;
 }
 
 @mixin grid ($numCol, $sep) {

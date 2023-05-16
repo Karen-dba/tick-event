@@ -2,33 +2,42 @@
 @use '../base/mixins' as mix;
 
 .header {
-    background-color: var.$blanco; 
+    background-color: var.$blanco;
+
+    @include mix.mqTablet {
+        display: flex;
+        justify-content: center;
+    }
 
     .contenido-header {
         padding: 2rem;
         
         @include mix.mqTablet {
-            display: flex;
-            justify-content: space-between;
-            align-items: center; 
-               
+            @include mix.grid (1, 1fr);
+        }
+        @include mix.mqDesktop {
+            @include mix.grid (3, 1fr);
         }
     }
 }   
 .logo {
     width: 25rem;
     min-width: 20rem;
-    margin: 0 auto;
+    margin: auto;
     @include mix.mqTablet {
-         margin: 0;
+         margin: 0 auto;
     }
  }
     
 .navegacion-principal{
+
     @include mix.mqTablet {
         display: flex;
         gap: 2rem;
-        margin-right: 2rem;
+        margin: 2rem auto 3rem auto;
+    }
+    @include mix.mqDesktop {
+       margin: auto 3.5rem auto 0;
     }
     a {
         display: block;
@@ -42,23 +51,31 @@
         @include mix.mqTablet {        
             padding-bottom: 0;           
         }
+        &:hover {
+            //color: #0074FF;
+            color: var.$colorBackgroundBotones;
+        }
     }
 }
-        .btn-registro {
-            font-size: 2.4rem;
-            text-align: center;
-            margin: 0 auto;
+.btn-publicar-evento {
+            
+    @include mix.botones(25rem, 7rem, 2rem);
             
 
-            @include mix.botones(32rem);
-            
+    @include mix.mqTablet {
+        // margin: auto auto;
+        display: grid;
+        grid-column: 1 / 2;
+        //width: 34rem;
+               
+    }
 
-            @include mix.mqTablet {
-                margin: 0 auto;
-                display: grid;
-                
-            }
+    @include mix.mqDesktop {
+        display: grid;
+        grid-column: 3 / 4;
+
+    }
         
-        }
+}
     
 
